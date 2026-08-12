@@ -14,7 +14,7 @@ build_one() {
   local work="$DIST_DIR/work-$platform"
   rm -rf "$work"
   mkdir -p "$work/bin"
-  (cd "$TOOL_DIR" && GOCACHE="${GOCACHE:-/private/tmp/anna-go-build-cache}" GOOS="$goos" GOARCH="$goarch" go build -ldflags "-s -w" -o "$work/bin/$NAME$ext" ./cmd/mini-notes-summarizer)
+  (cd "$TOOL_DIR" && GOCACHE="${GOCACHE:-/tmp/anna-go-build-cache}" GOOS="$goos" GOARCH="$goarch" go build -ldflags "-s -w" -o "$work/bin/$NAME$ext" ./cmd/mini-notes-summarizer)
   cat > "$work/manifest.json" <<MANIFEST
 {
   "name": "$NAME",

@@ -23,7 +23,7 @@ mkdir -p "$DIST_DIR/work-$platform/bin" "$DIST_DIR/archives"
 
 (
   cd "$TOOL_DIR"
-  GOCACHE="${GOCACHE:-/private/tmp/anna-go-build-cache}" GOOS="$goos" GOARCH="$goarch" go build -ldflags "-s -w" -o "$DIST_DIR/work-$platform/bin/$NAME$ext" ./cmd/mini-notes-summarizer
+  GOCACHE="${GOCACHE:-/tmp/anna-go-build-cache}" GOOS="$goos" GOARCH="$goarch" go build -ldflags "-s -w" -o "$DIST_DIR/work-$platform/bin/$NAME$ext" ./cmd/mini-notes-summarizer
 )
 
 cat > "$DIST_DIR/work-$platform/manifest.json" <<MANIFEST
