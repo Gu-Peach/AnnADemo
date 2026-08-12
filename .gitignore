@@ -1,0 +1,13 @@
+node_modules/
+bundle/
+dist/
+coverage/
+.DS_Store
+*.log
+.env
+.env.*
+.anna/
+.anna-app/
+lark-auth-qr.png
+anna-ui-*.png
+anna-harness-*.png

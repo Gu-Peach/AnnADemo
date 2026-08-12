@@ -1,0 +1,63 @@
+{
+  "schema": 2,
+  "permissions": [
+    "tools.invoke",
+    "llm.complete",
+    "storage.read",
+    "storage.write"
+  ],
+  "required_executas": [
+    {
+      "tool_id": "bundled:mini-notes-summarizer",
+      "min_version": "0.1.0",
+      "version": "latest"
+    }
+  ],
+  "optional_executas": [],
+  "system_prompt_addendum": "The user has the Mini Notes app open. Notes are stored through Anna App storage. When the user asks to summarize notes, use the bundled mini-notes-summarizer Executa rather than summarizing directly.",
+  "user_message_prefix_template": "[Mini Notes] {user_message}",
+  "tags": ["notes", "productivity", "summary", "sampling"],
+  "ui": {
+    "bundle": {
+      "format": "static-spa",
+      "entry": "index.html",
+      "external_origins": []
+    },
+    "views": [
+      {
+        "name": "main",
+        "title": "Mini Notes",
+        "default": true,
+        "entry": "index.html",
+        "min_size": { "w": 360, "h": 480 },
+        "default_size": { "w": 520, "h": 720 },
+        "max_size": { "w": 900, "h": 1000 },
+        "resizable": true,
+        "movable": true,
+        "single_instance": true
+      }
+    ],
+    "host_api": {
+      "tools": ["required:bundled:mini-notes-summarizer"],
+      "storage": ["get", "set"],
+      "window": ["set_title"],
+      "chat": [],
+      "artifact": [],
+      "llm": ["complete"],
+      "fs": [],
+      "prefs": []
+    },
+    "csp_overrides": {
+      "img-src": ["'self'", "data:", "blob:"],
+      "font-src": ["'self'", "data:"],
+      "style-src": ["'self'"],
+      "script-src": ["'self'"]
+    },
+    "state_merge": "last_writer_wins"
+  },
+  "dev": {
+    "fixtures": ["fixtures/*.jsonl"],
+    "seed_storage": {},
+    "user_id": 1
+  }
+}

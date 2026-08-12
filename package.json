@@ -1,0 +1,37 @@
+{
+  "name": "anna-mini-notes",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Mini Notes with LLM Summary Anna App.",
+  "scripts": {
+    "dev": "anna-app dev --no-llm",
+    "dev:anna": "anna-app dev --no-llm",
+    "validate": "anna-app validate --strict",
+    "build": "vite build",
+    "test": "vitest run",
+    "test:ui": "vitest run",
+    "test:go": "cd executas/mini-notes-summarizer && go test ./...",
+    "test:all": "npm run test && npm run test:go",
+    "executa:mock": "anna-app executa dev --mock-sampling fixtures/mock-sampling.jsonl --dir executas/mini-notes-summarizer",
+    "package:executa": "scripts/package-executa.sh"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "typescript": "latest",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "@anna-ai/cli": "latest",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "jsdom": "latest",
+    "vitest": "latest"
+  }
+}

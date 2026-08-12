@@ -1,0 +1,2 @@
+{"ns":"sampling","method":"createMessage","match":{"contentIncludes":"Mini Notes"},"result":{"text":"Follow up with the customer, fix the login bug, and collect workshop ideas as the next priorities.","model":"mock-sampling-mini-notes","usage":{"inputTokens":64,"outputTokens":18,"totalTokens":82},"stopReason":"endTurn"}}
+{"ns":"sampling","method":"createMessage","result":{"text":"Mock summary for Mini Notes.","model":"mock-sampling-mini-notes","usage":{"inputTokens":32,"outputTokens":6,"totalTokens":38},"stopReason":"endTurn"}}

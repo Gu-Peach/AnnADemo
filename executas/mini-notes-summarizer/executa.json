@@ -1,0 +1,43 @@
+{
+  "slug": "mini-notes-summarizer",
+  "name": "Mini Notes Summarizer",
+  "version": "0.1.0",
+  "executa_type": "tool",
+  "description": "Summarizes Mini Notes App notes by asking the Anna host LLM through sampling/createMessage.",
+  "tool_id": "tool-dev-mini-notes-summarizer",
+  "type": "go",
+  "enabled": true,
+  "distribution": {
+    "active": "local",
+    "profiles": {
+      "local": {
+        "type": "local",
+        "supports_protocol": true,
+        "capabilities": ["summarize"]
+      },
+      "binary": {
+        "type": "binary",
+        "executable_name": "mini-notes-summarizer",
+        "supports_protocol": true,
+        "capabilities": ["summarize"],
+        "binary_urls": {
+          "darwin-arm64": {
+            "url": "https://github.com/Gu-Peach/AnnADemo/releases/download/mini-notes-summarizer-v0.1.0/mini-notes-summarizer-darwin-arm64.tar.gz",
+            "entrypoint": "bin/mini-notes-summarizer",
+            "format": "tar.gz"
+          },
+          "darwin-x86_64": {
+            "url": "https://github.com/Gu-Peach/AnnADemo/releases/download/mini-notes-summarizer-v0.1.0/mini-notes-summarizer-darwin-x86_64.tar.gz",
+            "entrypoint": "bin/mini-notes-summarizer",
+            "format": "tar.gz"
+          },
+          "windows-x86_64": {
+            "url": "https://github.com/Gu-Peach/AnnADemo/releases/download/mini-notes-summarizer-v0.1.0/mini-notes-summarizer-windows-x86_64.zip",
+            "entrypoint": "bin/mini-notes-summarizer.exe",
+            "format": "zip"
+          }
+        }
+      }
+    }
+  }
+}
